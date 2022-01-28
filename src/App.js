@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Products from './Components/Products'
 import './App.css';
+import Layout from './Components/Layout'
 
 
 class App extends Component {
@@ -16,11 +17,13 @@ class App extends Component {
   render () {
     return (
       <div> 
+        <Layout>
         <Products 
           addToCart={() => console.log('No hace nada')}
           products={this.state.products}
 
         />        
+        </Layout>
       </div>
     )
   }
