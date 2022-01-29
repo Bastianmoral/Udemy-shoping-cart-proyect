@@ -4,7 +4,7 @@ const styles = {
   layout: {
     backgroundColor: '#fff',
     color: '#0A283E',
-    allignItems: 'center',
+    alignItems: 'center',
     display: 'flex',
     flexDirection: 'column',
   },
