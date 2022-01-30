@@ -7,7 +7,7 @@ const styles = {
     color: '#fff',
     padding: '2px 10px',
     fontSize: '0.9rem',
-    width: '20px',
+    width: '15px',
   }
 
 }

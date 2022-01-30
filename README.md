@@ -12,7 +12,6 @@ Cart
 BubbleAlert
 
 
-made with enthusiasm by Bastián Moral
 ## 🛠 Skills
 Javascript, HTML, React, class-based components.
 

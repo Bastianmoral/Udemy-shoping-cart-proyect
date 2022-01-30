@@ -13,18 +13,17 @@ class App extends Component {
       { name: 'Arvejas', price: 2500, img: '/products/arvejas.jpg'},
       { name: 'Lechuga', price: 500, img: '/products/lechuga.jpg'},
     ],
-    cart: [
-      
-
-    ], 
+    cart: [],
+    cartIsVisible: false,
   }
 
   addToCart = (product) => {
     const { cart } = this.state
-    if (cart.find(x => x.name === product.name)){
-      const newCart = cart.map(x => x.name === product.name ? ({
-        ...x,
-        cantidad: x.cantidad +1
+    if (cart.find(x => x.name === product.name))  {
+      const newCart = cart.map(x => x.name === product.name 
+        ? ({
+          ...x,
+          quantity: x.quantity +1
       })
       :x)  
       return this.setState ({ cart: newCart})
@@ -33,17 +32,29 @@ class App extends Component {
     return this.setState({
       cart: this.state.cart.concat({
         ...product,
-        cantidad: 1,
+        quantity: 1,
       })
     })
   }
 
+
+  showCart = () => {
+    if(!this.state.cart.length) {
+      return
+    }
+    this.setState({ cartIsVisible: !this.state.cartIsVisible })
+  }
+
   
   render () {
-    console.log(this.state.cart)
+    const { cartIsVisible } = this.state
     return (
       <div> 
-        <Navbar />
+        <Navbar 
+          cart={this.state.cart} 
+          cartIsVisible={cartIsVisible} 
+          showCart={this.showCart}
+        />
         <Layout>
         <Title />
         <Products 
